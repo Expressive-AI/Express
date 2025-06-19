@@ -5,7 +5,15 @@
   "framework": "vite",
   "routes": [
     {
-      "src": "/.*",
+      "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|json))",
+      "headers": { "cache-control": "s-maxage=31536000" }
+    },
+    {
+      "src": "/assets/(.*)",
+      "headers": { "cache-control": "s-maxage=31536000" }
+    },
+    {
+      "src": "/(.*)",
       "dest": "/index.html"
     }
   ]
