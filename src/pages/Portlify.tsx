@@ -5,7 +5,7 @@ import { CheckCircle, Star, Users, Briefcase, Palette, ExternalLink, ArrowRight,
 const Portlify = () => {
   const sampleSites = [
     {
-      title: "For Profeessionals",
+      title: "Academic Portfolio",
       description: "Perfect for researchers and educators, working professionals & students",
       url: "https://albert-francis.vercel.app/",
       category: "Academic"
@@ -17,9 +17,9 @@ const Portlify = () => {
       category: "Creative"
     },
     {
-      title: "Academic Portfolio",
+      title: "For Professionals",
       description: "For Students and academics to showcase their works and achievements",
-      url: "https://expressive-ai.vercel.app/",
+      url: "https://lisamaria.vercel.app/",
       category: "Business"
     }
   ];
@@ -193,7 +193,7 @@ const Portlify = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="https://forms.google.com/your-registration-form-id"
+                href="https://forms.gle/Zu2RFPJkteeaTrrL7"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="backdrop-blur-sm bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white rounded-xl px-6 py-3 font-medium transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/25 dark:hover:shadow-blue-400/25 flex items-center justify-center"
@@ -347,7 +347,7 @@ const Portlify = () => {
                   )}
 
                   <a
-                    href="https://forms.google.com/your-registration-form-id"
+                    href="https://forms.gle/Zu2RFPJkteeaTrrL7"
                     target="_blank"
                     rel="noopener noreferrer"                    className={`w-full rounded-xl px-4 py-3 font-medium flex items-center justify-center transition-all duration-300 group-hover:shadow-lg transform hover:scale-105 ${
                       plan.popular
@@ -377,7 +377,7 @@ const Portlify = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="https://forms.google.com/your-registration-form-id"
+                  href="https://forms.gle/Zu2RFPJkteeaTrrL7"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="backdrop-blur-sm bg-white/20 hover:bg-white/30 text-white rounded-xl px-6 py-3 font-medium transition-all duration-300 hover:shadow-lg flex items-center justify-center"

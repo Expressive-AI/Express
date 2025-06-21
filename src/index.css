@@ -5,10 +5,22 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
   }
   
   body {
     transition: background-color 0.3s ease, color 0.3s ease;
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
+    /* Improve text rendering on mobile */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Prevent horizontal overflow on all elements */
+  * {
+    box-sizing: border-box;
   }
 }
 
@@ -73,4 +85,90 @@
 /* Selection styling */
 ::selection {
   @apply bg-accent-blue-200 dark:bg-accent-blue-800 text-accent-blue-900 dark:text-accent-blue-100;
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 640px) {
+  /* Ensure no element exceeds viewport width */
+  * {
+    max-width: 100vw;
+  }
+
+  /* Fix common overflow issues */
+  .container {
+    overflow-x: hidden;
+  }
+
+  /* Improve text readability on mobile */
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Prevent zoom on input focus on iOS */
+  input, textarea, select {
+    font-size: 16px !important;
+  }
+
+  /* Improve touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Fix flexbox issues on mobile */
+  .flex {
+    flex-wrap: wrap;
+  }
+
+  /* Ensure grid doesn't overflow */
+  .grid {
+    overflow-x: hidden;
+  }
+}
+
+/* Mobile-first responsive utilities */
+.mobile-container {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.mobile-text {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Prevent layout shift on mobile */
+.stable-layout {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Better touch targets */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Mobile-optimized animations */
+@media (prefers-reduced-motion: reduce) {
+  .animate-slide-up,
+  .animate-slide-down,
+  .animate-fade-in,
+  .animate-bounce,
+  .animate-pulse,
+  .animate-float {
+    animation: none;
+  }
+}
+
+/* Prevent horizontal scroll globally */
+.no-scroll-x {
+  overflow-x: hidden;
 }

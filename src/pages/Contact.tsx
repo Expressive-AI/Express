@@ -139,7 +139,7 @@ const Contact: React.FC = () => {
                     <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </ActionButton>
-                <ActionButton to="/join" variant="secondary" className="group">
+                <ActionButton to="/contact" variant="secondary" className="group">
                   <div className="flex items-center justify-center">
                     Join Early Access
                     <Sparkles className="ml-2 h-4 w-4 group-hover:rotate-12 transition-transform" />
