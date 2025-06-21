@@ -221,7 +221,7 @@ const Home = () => {
                 </span>
               </h1>
               <div className="text-xl sm:text-2xl md:text-3xl text-slate-600 dark:text-slate-300 mb-6 sm:mb-8 leading-relaxed font-light">
-                <span className="block mb-1 sm:mb-2">AI for Business, Management, Arts, Humanities, Education </span>
+                <span className="block mb-1 sm:mb-2">AI for Business, Management, Arts, Humanities, Education</span>
                 <span className="block">and Social Science</span>
               </div>
               <p className="text-lg sm:text-xl text-slate-600 dark:text-slate-300 mb-8 sm:mb-12 leading-relaxed max-w-2xl mx-auto lg:mx-0">
