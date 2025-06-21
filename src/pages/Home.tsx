@@ -220,8 +220,8 @@ const Home = () => {
                 </span>
               </h1>
               <div className="text-2xl md:text-3xl text-slate-600 dark:text-slate-300 mb-8 leading-relaxed font-light">
-                <span className="block mb-2">AI for Business, Arts,</span>
-                <span className="block">Education & Society</span>
+                <span className="block mb-2">AI for Business, Management, Arts, Humanities</span>
+                <span className="block">Education and Social Science</span>
               </div>
               <p className="text-xl text-slate-600 dark:text-slate-300 mb-12 leading-relaxed max-w-2xl">
                 Empowering creators, thinkers, educators & strategists with ethical, expressive AI tools that honor human intelligence and creativity.
