@@ -102,49 +102,57 @@ const Navigation = () => {
       </div>
 
       {/* Mobile Navigation - Enhanced & Fixed */}
-      <div className={`lg:hidden fixed top-16 left-0 right-0 transition-all duration-300 ease-out ${
+      <div className={`lg:hidden fixed inset-0 transition-all duration-300 ease-out ${
         isOpen 
-          ? 'max-h-screen opacity-100 visible' 
-          : 'max-h-0 opacity-0 invisible'
-      } overflow-hidden z-40`}>
-        <div className="px-4 py-4 glass backdrop-blur-xl bg-white/95 dark:bg-slate-900/95 border-b border-white/20 dark:border-white/10 shadow-xl">
-          <div className="space-y-2">
-            {navItems.map((item, index) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                onClick={() => setIsOpen(false)}
-                className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300 transform hover:translate-x-2 ${
-                  location.pathname === item.path
-                    ? 'bg-gradient-to-r from-accent-blue-500/20 to-soft-coral-500/20 text-accent-blue-700 dark:text-accent-blue-300 shadow-md'
-                    : 'text-slate-700 dark:text-slate-300 hover:bg-gradient-to-r hover:from-accent-blue-500/10 hover:to-soft-coral-500/10'
-                }`}
-                style={{ animationDelay: `${index * 50}ms` }}
-              >
-                {item.label}
-              </Link>
-            ))}
-            
-            <div className="pt-4 space-y-3 border-t border-white/20 dark:border-white/10">
-              <div className="flex justify-center sm:hidden">
-                <ThemeToggle />
-              </div>
+          ? 'opacity-100 visible' 
+          : 'opacity-0 invisible pointer-events-none'
+      } z-40`}>
+        {/* Backdrop to close menu */}
+        <div 
+          className="absolute inset-0 bg-black/20 dark:bg-black/40 backdrop-blur-sm"
+          onClick={() => setIsOpen(false)}
+        />
+        
+        {/* Menu Content */}
+        <div className={`absolute top-16 left-0 right-0 transition-all duration-300 ease-out ${
+          isOpen 
+            ? 'translate-y-0' 
+            : '-translate-y-full'
+        }`}>
+          <div className="px-4 py-4 bg-white/95 dark:bg-slate-900/95 border-b border-white/20 dark:border-white/10 shadow-xl">
+            <div className="space-y-2">
+              {navItems.map((item, index) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setIsOpen(false)}
+                  className={`block px-4 py-3 text-base font-medium rounded-xl transition-all duration-300 transform hover:translate-x-2 ${
+                    location.pathname === item.path
+                      ? 'bg-gradient-to-r from-accent-blue-500/20 to-soft-coral-500/20 text-accent-blue-700 dark:text-accent-blue-300 shadow-md'
+                      : 'text-slate-700 dark:text-slate-300 hover:bg-gradient-to-r hover:from-accent-blue-500/10 hover:to-soft-coral-500/10'
+                  }`}
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  {item.label}
+                </Link>
+              ))}
               
-              <Link
-                to="/contact"
-                onClick={() => setIsOpen(false)}
-                className="block w-full py-3 text-center text-white font-medium bg-gradient-to-r from-accent-blue-600 to-soft-coral-500 rounded-xl hover:from-accent-blue-700 hover:to-soft-coral-600 transform hover:scale-105 transition-all duration-300 shadow-lg"
-              >
-                Join Early Access
-              </Link>
+              <div className="pt-4 space-y-3 border-t border-white/20 dark:border-white/10">
+                <div className="flex justify-center sm:hidden">
+                  <ThemeToggle />
+                </div>
+                
+                <Link
+                  to="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="block w-full py-3 text-center text-white font-medium bg-gradient-to-r from-accent-blue-600 to-soft-coral-500 rounded-xl hover:from-accent-blue-700 hover:to-soft-coral-600 transform hover:scale-105 transition-all duration-300 shadow-lg"
+                >
+                  Join Early Access
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-        {/* Backdrop to close menu */}
-        <div 
-          className="fixed inset-0 bg-black/20 dark:bg-black/40 backdrop-blur-sm"
-          onClick={() => setIsOpen(false)}
-        />
       </div>
     </nav>
   );
